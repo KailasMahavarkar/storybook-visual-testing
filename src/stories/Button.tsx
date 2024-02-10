@@ -30,7 +30,7 @@ interface ButtonProps {
 export const Button = ({
     primary = false,
     size = 'medium',
-    backgroundColor = 'pink',
+    backgroundColor,
     label,
     ...props
 }: ButtonProps) => {
@@ -39,11 +39,7 @@ export const Button = ({
         <button
             type="button"
             className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-            style={{
-                backgroundColor,
-                padding: '10px 20px',
-                borderRadius: '5px',
-            }}
+            style={{ backgroundColor: backgroundColor || 'hotpink' }}
             {...props}
         >
             {label}
